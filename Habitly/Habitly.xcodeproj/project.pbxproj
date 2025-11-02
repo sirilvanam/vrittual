@@ -1,0 +1,305 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1000001 /* HabitlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002 /* HabitlyApp.swift */; };
+		A1000003 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000004 /* DashboardView.swift */; };
+		A1000005 /* AddCalorieEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000006 /* AddCalorieEntryView.swift */; };
+		A1000007 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000008 /* SettingsView.swift */; };
+		A1000009 /* ManageIngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000010 /* ManageIngredientsView.swift */; };
+		A1000011 /* ManageRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000012 /* ManageRecipesView.swift */; };
+		A1000013 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000014 /* Ingredient.swift */; };
+		A1000015 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000016 /* Recipe.swift */; };
+		A1000017 /* CalorieEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000018 /* CalorieEntry.swift */; };
+		A1000019 /* DailyGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000020 /* DailyGoal.swift */; };
+		A1000021 /* CalorieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000022 /* CalorieService.swift */; };
+		A1000023 /* SampleDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000024 /* SampleDataLoader.swift */; };
+		A1000025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1000026 /* Assets.xcassets */; };
+		A1000041 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000042 /* Habit.swift */; };
+		A1000043 /* HabitLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000044 /* HabitLog.swift */; };
+		A1000045 /* HabitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000046 /* HabitService.swift */; };
+		A1000047 /* SampleHabitLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000048 /* SampleHabitLoader.swift */; };
+		A1000049 /* HabitsDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000050 /* HabitsDashboardView.swift */; };
+		A1000051 /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000052 /* AddHabitView.swift */; };
+		A1000053 /* HabitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000054 /* HabitDetailView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A1000027 /* Habitly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habitly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1000002 /* HabitlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitlyApp.swift; sourceTree = "<group>"; };
+		A1000004 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		A1000006 /* AddCalorieEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCalorieEntryView.swift; sourceTree = "<group>"; };
+		A1000008 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A1000010 /* ManageIngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageIngredientsView.swift; sourceTree = "<group>"; };
+		A1000012 /* ManageRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRecipesView.swift; sourceTree = "<group>"; };
+		A1000014 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		A1000016 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		A1000018 /* CalorieEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieEntry.swift; sourceTree = "<group>"; };
+		A1000020 /* DailyGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoal.swift; sourceTree = "<group>"; };
+		A1000022 /* CalorieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieService.swift; sourceTree = "<group>"; };
+		A1000024 /* SampleDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataLoader.swift; sourceTree = "<group>"; };
+		A1000026 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1000042 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		A1000044 /* HabitLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitLog.swift; sourceTree = "<group>"; };
+		A1000046 /* HabitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitService.swift; sourceTree = "<group>"; };
+		A1000048 /* SampleHabitLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHabitLoader.swift; sourceTree = "<group>"; };
+		A1000050 /* HabitsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsDashboardView.swift; sourceTree = "<group>"; };
+		A1000052 /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
+		A1000054 /* HabitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		A1000028 = {
+			isa = PBXGroup;
+			children = (
+				A1000029 /* Habitly */,
+				A1000030 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1000029 /* Habitly */ = {
+			isa = PBXGroup;
+			children = (
+				A1000002 /* HabitlyApp.swift */,
+				A1000031 /* Views */,
+				A1000032 /* Models */,
+				A1000033 /* Services */,
+				A1000026 /* Assets.xcassets */,
+			);
+			path = Habitly;
+			sourceTree = "<group>";
+		};
+		A1000030 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1000027 /* Habitly.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1000031 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A1000004 /* DashboardView.swift */,
+				A1000006 /* AddCalorieEntryView.swift */,
+				A1000008 /* SettingsView.swift */,
+				A1000010 /* ManageIngredientsView.swift */,
+				A1000012 /* ManageRecipesView.swift */,
+				A1000050 /* HabitsDashboardView.swift */,
+				A1000052 /* AddHabitView.swift */,
+				A1000054 /* HabitDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A1000032 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A1000014 /* Ingredient.swift */,
+				A1000016 /* Recipe.swift */,
+				A1000018 /* CalorieEntry.swift */,
+				A1000020 /* DailyGoal.swift */,
+				A1000042 /* Habit.swift */,
+				A1000044 /* HabitLog.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A1000033 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A1000022 /* CalorieService.swift */,
+				A1000024 /* SampleDataLoader.swift */,
+				A1000046 /* HabitService.swift */,
+				A1000048 /* SampleHabitLoader.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1000034 /* Habitly */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1000035 /* Build configuration list for PBXNativeTarget "Habitly" */;
+			buildPhases = (
+				A1000036 /* Sources */,
+				A1000037 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Habitly;
+			productName = Habitly;
+			productReference = A1000027 /* Habitly.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1000038 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A1000034 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A1000039 /* Build configuration list for PBXProject "Habitly" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1000028;
+			productRefGroup = A1000030 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1000034 /* Habitly */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1000037 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000025 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1000036 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000001 /* HabitlyApp.swift in Sources */,
+				A1000003 /* DashboardView.swift in Sources */,
+				A1000005 /* AddCalorieEntryView.swift in Sources */,
+				A1000007 /* SettingsView.swift in Sources */,
+				A1000009 /* ManageIngredientsView.swift in Sources */,
+				A1000011 /* ManageRecipesView.swift in Sources */,
+				A1000013 /* Ingredient.swift in Sources */,
+				A1000015 /* Recipe.swift in Sources */,
+				A1000017 /* CalorieEntry.swift in Sources */,
+				A1000019 /* DailyGoal.swift in Sources */,
+				A1000021 /* CalorieService.swift in Sources */,
+				A1000023 /* SampleDataLoader.swift in Sources */,
+				A1000041 /* Habit.swift in Sources */,
+				A1000043 /* HabitLog.swift in Sources */,
+				A1000045 /* HabitService.swift in Sources */,
+				A1000047 /* SampleHabitLoader.swift in Sources */,
+				A1000049 /* HabitsDashboardView.swift in Sources */,
+				A1000051 /* AddHabitView.swift in Sources */,
+				A1000053 /* HabitDetailView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A1000040 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.habitly.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1000041 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.habitly.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1000035 /* Build configuration list for PBXNativeTarget "Habitly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1000040 /* Debug */,
+				A1000041 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1000039 /* Build configuration list for PBXProject "Habitly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1000040 /* Debug */,
+				A1000041 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1000038 /* Project object */;
+}
