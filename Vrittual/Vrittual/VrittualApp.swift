@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct HabitlyApp: App {
+struct VrittualApp: App {
     let container: ModelContainer
     
     init() {

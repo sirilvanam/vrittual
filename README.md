@@ -1,6 +1,6 @@
-# Habitly - Comprehensive Habit Tracking iOS App
+# Vrittual - Comprehensive Habit Tracking iOS App
 
-Habitly is an iOS habit tracking application that helps you build and maintain healthy habits. Track calories, exercise, hobbies, water intake, travel, and more - all with flexible tracking frequencies (daily, weekly, bi-weekly, monthly) and comprehensive progress dashboards.
+Vrittual is an iOS habit tracking application that helps you build and maintain healthy habits. Track calories, exercise, hobbies, water intake, travel, and more - all with flexible tracking frequencies (daily, weekly, bi-weekly, monthly) and comprehensive progress dashboards.
 
 ## Features
 
@@ -89,7 +89,7 @@ cd habitly
 
 2. Open the project in Xcode:
 ```bash
-open Habitly/Habitly.xcodeproj
+open Vrittual/Vrittual.xcodeproj
 ```
 
 3. Select your target device (iPhone simulator or physical device)
@@ -149,9 +149,9 @@ The main screen shows your habit tracking dashboard with:
 ## Project Structure
 
 ```
-Habitly/
-├── Habitly/
-│   ├── HabitlyApp.swift          # Main app entry point
+Vrittual/
+├── Vrittual/
+│   ├── VrittualApp.swift          # Main app entry point
 │   ├── Models/
 │   │   ├── Habit.swift            # Habit definition model
 │   │   ├── HabitLog.swift         # Habit tracking logs
@@ -174,7 +174,7 @@ Habitly/
 │   │   ├── CalorieService.swift       # Calorie tracking logic
 │   │   └── SampleDataLoader.swift     # Sample calorie data
 │   └── Assets.xcassets/           # App assets
-└── Habitly.xcodeproj/             # Xcode project file
+└── Vrittual.xcodeproj/             # Xcode project file
 ```
 
 ## Data Models

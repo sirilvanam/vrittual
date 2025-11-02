@@ -1,4 +1,4 @@
-# Habitly UI Mockups & Screenshots Guide
+# Vrittual UI Mockups & Screenshots Guide
 
 Since this is an iOS app that requires Xcode to build and run, this document provides detailed descriptions of what each screen looks like to help visualize the user interface.
 

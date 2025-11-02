@@ -1,8 +1,8 @@
-# Habitly App Features & UI Overview
+# Vrittual App Features & UI Overview
 
 ## 📱 Main Dashboard Screen
 
-The dashboard is the heart of the Habitly app, providing an at-a-glance view of your daily calorie tracking progress.
+The dashboard is the heart of the Vrittual app, providing an at-a-glance view of your daily calorie tracking progress.
 
 ### Key UI Elements:
 
@@ -288,4 +288,4 @@ Full CRUD operations for the recipe database.
 
 ---
 
-This comprehensive feature set makes Habitly a powerful yet simple calorie tracking solution for iPhone users!
+This comprehensive feature set makes Vrittual a powerful yet simple calorie tracking solution for iPhone users!

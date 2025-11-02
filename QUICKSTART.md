@@ -1,11 +1,11 @@
-# Habitly Quick Start Guide
+# Vrittual Quick Start Guide
 
 ## 🚀 Getting Started in 5 Minutes
 
 ### Step 1: Open the Project
 ```bash
-cd Habitly
-open Habitly.xcodeproj
+cd Vrittual
+open Vrittual.xcodeproj
 ```
 
 ### Step 2: Build and Run
@@ -154,7 +154,7 @@ A: Not currently, but it's a planned feature.
 
 ## 🎉 You're All Set!
 
-You now know everything you need to start tracking your calories with Habitly. Remember:
+You now know everything you need to start tracking your calories with Vrittual. Remember:
 
 1. **Open the app daily** - Make it a habit
 2. **Log as you eat** - Don't wait until end of day

@@ -1,14 +1,14 @@
-# Habitly Architecture Documentation
+# Vrittual Architecture Documentation
 
 ## 🏗️ Application Architecture
 
-Habitly follows a clean, modular architecture pattern inspired by MVVM (Model-View-ViewModel) principles, leveraging SwiftUI's declarative paradigm and SwiftData for persistence.
+Vrittual follows a clean, modular architecture pattern inspired by MVVM (Model-View-ViewModel) principles, leveraging SwiftUI's declarative paradigm and SwiftData for persistence.
 
 ## 📐 Architecture Diagram
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                        HabitlyApp.swift                      │
+│                        VrittualApp.swift                      │
 │                     (Application Entry)                      │
 │  - Configures SwiftData ModelContainer                      │
 │  - Loads sample data on first launch                        │
@@ -87,12 +87,12 @@ View updates reactively
 
 ## 📦 Component Breakdown
 
-### 1. App Layer (`HabitlyApp.swift`)
+### 1. App Layer (`VrittualApp.swift`)
 **Responsibility:** Application lifecycle and initial setup
 
 ```swift
 @main
-struct HabitlyApp: App {
+struct VrittualApp: App {
     // Configures ModelContainer for SwiftData
     // Loads sample data on first launch
     // Sets up main view hierarchy

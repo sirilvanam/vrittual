@@ -1,6 +1,6 @@
-# Contributing to Habitly
+# Contributing to Vrittual
 
-Thank you for your interest in contributing to Habitly! This document provides guidelines for contributing to the project.
+Thank you for your interest in contributing to Vrittual! This document provides guidelines for contributing to the project.
 
 ## 🚀 Getting Started
 
@@ -21,8 +21,8 @@ cd habitly
 
 2. **Open in Xcode**
 ```bash
-cd Habitly
-open Habitly.xcodeproj
+cd Vrittual
+open Vrittual.xcodeproj
 ```
 
 3. **Build and Run**
@@ -148,7 +148,7 @@ func testAddCalorieEntry_WithValidData_SavesSuccessfully() throws {
 ⌘ + U
 
 # Or via command line
-xcodebuild test -scheme Habitly -destination 'platform=iOS Simulator,name=iPhone 15'
+xcodebuild test -scheme Vrittual -destination 'platform=iOS Simulator,name=iPhone 15'
 ```
 
 ## 🔄 Git Workflow
@@ -289,9 +289,9 @@ Include:
 ## 📁 Project Structure
 
 ```
-Habitly/
-├── Habitly/
-│   ├── HabitlyApp.swift          # App entry point
+Vrittual/
+├── Vrittual/
+│   ├── VrittualApp.swift          # App entry point
 │   ├── Models/                    # Data models
 │   │   ├── Ingredient.swift
 │   │   ├── Recipe.swift
@@ -396,7 +396,7 @@ By contributing, you agree that your contributions will be licensed under the sa
 
 ## 🙏 Thank You!
 
-Every contribution helps make Habitly better for everyone. We appreciate your time and effort!
+Every contribution helps make Vrittual better for everyone. We appreciate your time and effort!
 
 ---
 
