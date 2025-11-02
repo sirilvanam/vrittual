@@ -34,6 +34,16 @@ struct DashboardView: View {
         min(totalCaloriesToday / dailyGoal, 1.0)
     }
     
+    private var entriesHeaderText: String {
+        if Calendar.current.isDateInToday(selectedDate) {
+            return "Today's Entries"
+        } else {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            return "\(formatter.string(from: selectedDate))'s Entries"
+        }
+    }
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -106,7 +116,7 @@ struct DashboardView: View {
                     
                     // Today's Entries
                     VStack(alignment: .leading, spacing: 12) {
-                        Text("Today's Entries")
+                        Text(entriesHeaderText)
                             .font(.headline)
                             .padding(.horizontal)
                         
@@ -153,7 +163,7 @@ struct DashboardView: View {
                 }
             }
             .sheet(isPresented: $showingAddEntry) {
-                AddCalorieEntryView()
+                AddCalorieEntryView(selectedDate: selectedDate)
             }
         }
     }

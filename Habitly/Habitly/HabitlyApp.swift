@@ -3,30 +3,29 @@ import SwiftData
 
 @main
 struct HabitlyApp: App {
-    var body: some Scene {
-        WindowGroup {
-            DashboardView()
-                .modelContainer(for: [
-                    Ingredient.self,
-                    Recipe.self,
-                    CalorieEntry.self,
-                    DailyGoal.self
-                ])
-                .onAppear {
-                    loadSampleDataIfNeeded()
-                }
+    let container: ModelContainer
+    
+    init() {
+        do {
+            container = try ModelContainer(for: Ingredient.self, Recipe.self, CalorieEntry.self, DailyGoal.self)
+            
+            // Load sample data if needed
+            let context = container.mainContext
+            let ingredientDescriptor = FetchDescriptor<Ingredient>()
+            let existingIngredients = (try? context.fetch(ingredientDescriptor)) ?? []
+            
+            if existingIngredients.isEmpty {
+                SampleDataLoader.loadSampleData(context: context)
+            }
+        } catch {
+            fatalError("Failed to create ModelContainer: \(error)")
         }
     }
     
-    private func loadSampleDataIfNeeded() {
-        let container = try? ModelContainer(for: Ingredient.self, Recipe.self, CalorieEntry.self, DailyGoal.self)
-        guard let context = container?.mainContext else { return }
-        
-        let ingredientDescriptor = FetchDescriptor<Ingredient>()
-        let existingIngredients = (try? context.fetch(ingredientDescriptor)) ?? []
-        
-        if existingIngredients.isEmpty {
-            SampleDataLoader.loadSampleData(context: context)
+    var body: some Scene {
+        WindowGroup {
+            DashboardView()
+                .modelContainer(container)
         }
     }
 }

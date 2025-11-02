@@ -7,6 +7,8 @@ struct AddCalorieEntryView: View {
     @Query private var ingredients: [Ingredient]
     @Query private var recipes: [Recipe]
     
+    let selectedDate: Date
+    
     @State private var selectedTab = 0
     @State private var selectedMealType = "breakfast"
     @State private var searchText = ""
@@ -183,7 +185,8 @@ struct AddCalorieEntryView: View {
             name: ingredient.name,
             calories: ingredient.caloriesPerServing,
             entryType: "ingredient",
-            mealType: selectedMealType
+            mealType: selectedMealType,
+            date: selectedDate
         )
         dismiss()
     }
@@ -193,7 +196,8 @@ struct AddCalorieEntryView: View {
             name: recipe.name,
             calories: recipe.caloriesPerServing,
             entryType: "recipe",
-            mealType: selectedMealType
+            mealType: selectedMealType,
+            date: selectedDate
         )
         dismiss()
     }

@@ -11,9 +11,9 @@ class CalorieService {
     
     // MARK: - Calorie Entries
     
-    func addCalorieEntry(name: String, calories: Double, entryType: String, mealType: String) throws {
+    func addCalorieEntry(name: String, calories: Double, entryType: String, mealType: String, date: Date = Date()) throws {
         let entry = CalorieEntry(
-            date: Date(),
+            date: date,
             name: name,
             calories: calories,
             entryType: entryType,
