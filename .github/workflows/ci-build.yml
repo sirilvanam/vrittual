@@ -1,0 +1,128 @@
+name: iOS CI - build archive
+
+on:
+  push:
+    branches: [ main, 'copilot/**' ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-archive:
+    name: Build XCArchive
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: ${{ github.workspace }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show xcodebuild version
+        run: xcodebuild -version
+
+      - name: Create build dir
+        run: mkdir -p build
+
+      - name: Clean & archive (Release)
+        # Archives the project into an .xcarchive; does not attempt automated signing.
+        run: |
+          set -o pipefail
+          xcodebuild -project Vrittual/Vrittual.xcodeproj \
+            -scheme Vrittual \
+            -configuration Release \
+            -sdk iphoneos \
+            clean archive \
+            -archivePath $GITHUB_WORKSPACE/build/Vrittual.xcarchive
+
+      - name: List archive contents
+        run: ls -la build || true
+
+      - name: Upload XCArchive artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Vrittual-xcarchive
+          path: build/Vrittual.xcarchive
+
+      - name: Export unsigned .ipa (optional)
+        if: ${{ always() }}
+        run: |
+          # Exporting to .ipa requires valid signing/provisioning. This step attempts a generic export
+          # and will likely fail unless you provide signing credentials/profiles and an exportOptions.plist.
+          export_dir="$GITHUB_WORKSPACE/build/export"
+          mkdir -p "$export_dir"
+          exportOptions="$GITHUB_WORKSPACE/.github/workflows/exportOptions.plist"
+          if [ -f "$exportOptions" ]; then
+            echo "Found exportOptions.plist — attempting export (may fail if signing not configured)"
+            xcodebuild -exportArchive -archivePath $GITHUB_WORKSPACE/build/Vrittual.xcarchive \
+              -exportOptionsPlist "$exportOptions" -exportPath "$export_dir" || true
+            ls -la "$export_dir" || true
+          else
+            echo "No exportOptions.plist found — skipping ipa export. See docs/CI.md to configure signing/export."
+          fi
+
+  upload-testflight:
+    name: Build & upload to TestFlight (Fastlane)
+    runs-on: macos-latest
+    needs: build-archive
+    if: ${{ secrets.APP_STORE_CONNECT_KEY_ID && secrets.APP_STORE_CONNECT_ISSUER_ID && secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+    env:
+      FASTLANE_USER: ${{ secrets.APPLE_ID }}
+      APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER }}
+      TEAM_ID: ${{ secrets.TEAM_ID }}
+      EXPORT_METHOD: app-store
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+
+      - name: Install bundler and fastlane
+        run: |
+          gem install bundler
+          gem install fastlane -NV
+
+      - name: Decode and write App Store Connect API key
+        run: |
+          echo "$APP_STORE_CONNECT_PRIVATE_KEY" | base64 --decode > AuthKey_${{ secrets.APP_STORE_CONNECT_KEY_ID }}.p8
+        env:
+          APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+
+      - name: Install certificate (if provided)
+        if: ${{ secrets.CERTIFICATE_P12 && secrets.CERTIFICATE_PASSWORD }}
+        run: |
+          echo "$CERTIFICATE_P12" | base64 --decode > certificate.p12
+          security create-keychain -p actions build.keychain
+          security default-keychain -s build.keychain
+          security unlock-keychain -p actions build.keychain
+          security import certificate.p12 -k ~/Library/Keychains/build.keychain -P "$CERTIFICATE_PASSWORD" -T /usr/bin/codesign || true
+          security set-key-partition-list -S apple-tool:,apple: -s -k actions ~/Library/Keychains/build.keychain || true
+        env:
+          CERTIFICATE_P12: ${{ secrets.CERTIFICATE_P12 }}
+          CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
+
+      - name: Install provisioning profile (if provided)
+        if: ${{ secrets.PROVISIONING_PROFILE }}
+        run: |
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          echo "$PROVISIONING_PROFILE" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision
+        env:
+          PROVISIONING_PROFILE: ${{ secrets.PROVISIONING_PROFILE }}
+
+      - name: Run Fastlane lane (ci_upload)
+        run: |
+          export APP_STORE_CONNECT_KEY_ID=${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          export APP_STORE_CONNECT_ISSUER_ID=${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          export APP_STORE_CONNECT_PRIVATE_KEY=$(cat AuthKey_${{ secrets.APP_STORE_CONNECT_KEY_ID }}.p8)
+          bundle config set --local path 'vendor/bundle' || true
+          # If you're using a Gemfile uncomment the next line to install bundle
+          # bundle install
+          fastlane ci_upload
+        env:
+          APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+
